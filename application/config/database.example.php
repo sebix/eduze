@@ -18,17 +18,17 @@ return array
 			 * Ports and sockets may be appended to the hostname.
 			 */
 			'hostname'   => 'localhost',
-			'username'   => 'root',
-			'password'   => 'toor',
+			'username'   => '',
+			'password'   => '',
 			'persistent' => FALSE,
-			'database'   => 'blog',
+			'database'   => 'eduze',
 		),
 		'table_prefix' => '',
 		'charset'      => 'utf8',
 		'caching'      => FALSE,
 		'profiling'    => TRUE,
 	),
-	'alternate' => array(
+/*	'alternate' => array(
 		'type'       => 'pdo',
 		'connection' => array(
 			/**
@@ -39,7 +39,7 @@ return array
 			 * string   password
 			 * boolean  persistent
 			 * string   identifier
-			 */
+			 *//*
 			'dsn'        => 'mysql:host=localhost;dbname=kohana',
 			'username'   => 'root',
 			'password'   => 'r00tdb',
@@ -49,5 +49,5 @@ return array
 		'charset'      => 'utf8',
 		'caching'      => FALSE,
 		'profiling'    => TRUE,
-	),
+	),*/
 );
