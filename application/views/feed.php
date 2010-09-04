@@ -1,4 +1,7 @@
-<? include('inc/feed_head.php'); ?>
+<?
+include('inc/feed_head.php'); 
+$textile = new Textile();
+?>
 <? if (isset($top)): echo $top; endif; ?>
 <? foreach($entries->as_array() as $row): ?>
 <entry>
@@ -23,7 +26,7 @@
 		<?=$textile->TextileThis($row['body'])?>
 	</p>
 	<? if (isset($row['title'])): /* no comment */ ?>
-		<p>von <?=$row['author']?> am <?=$row['time']?> <?=i18n::get('in-cat')?> <?=Helper_Sebix::anchor('category/'.$row['cat'], $row['cat'], i18n::get('go-to-cat') . ' ' . $row['cat']);?><br />
+		<p><?=i18n::get('by')?> <?=$row['author']?> <?=i18n::get('on')?> <?=$row['time']?> <?=i18n::get('in-cat')?> <?=Helper_Sebix::anchor('category/'.$row['cat'], $row['cat'], i18n::get('go-to-cat') . ' ' . $row['cat']);?><br />
 		<a href="<?=Kohana::$base_url?>post/<?=$row['cat']?>/<?=$row['name']?>#comments"><?=i18n::get('comments')?></a><br />
 	<? else: ?>
 		<p><?=i18n::get('by')?> <?=$row['author']?> <?=i18n::get('on')?> <?=$row['time']?> <?=i18n::get('in-post')?> <?=Helper_Sebix::anchor('post/'.$row['cat'].'/'.$row['name'], $row['name'],i18n::get('go-to-post'));?><br />
@@ -36,7 +39,6 @@
 	<? endforeach; endif; ?></p>
 </div></content>
 </entry>
-
 
 <? endforeach; ?>
 <? if (isset($bottom)): echo $bottom; endif; ?>

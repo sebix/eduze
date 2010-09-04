@@ -1,0 +1,23 @@
+h1. eduze
+
+eduze is a simple but feature-rich Blogging-System based on KohanaPHP3. But note: it's still under developemet!
+
+h2. Configuration
+
+h3. Database
+
+Edit /application/config/database.example.php and rename it to database.php
+
+h2. Integrated:
+
+h3. Base: Kohana PHP Framework, version 3.0 (dev)
+
+Based on development version of [Kohana](http://kohanaframework.org/).
+
+h3. Yahasana's Captcha-Module
+
+"Yahasana/Kohana-Captcha":http://github.com/Yahasana/Kohana-Captcha creates the Text-Captchas.
+
+h3. Textile Markup
+
+"Textile":http://textile.thresholdstate.com/ is used for Markup in Blogposts

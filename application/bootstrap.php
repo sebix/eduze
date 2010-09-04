@@ -77,7 +77,7 @@ Kohana::modules(array(
 	'pagination' => MODPATH.'pagination', // Paging of results
 	'userguide'  => MODPATH.'userguide',  // User guide and API documentation
 //	'namespace'  => MODPATH.'namespace',  // own namespace module
-	'markup'	=>	MODPATH.'markup',	// own markup-language module
+	'textile'	=>	MODPATH.'markup',	// own markup-language module
 	'captcha'	=>	MODPATH.'captcha',	// Yahasana-Captcha-for-Kohana
 	));
 

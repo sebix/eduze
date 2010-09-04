@@ -114,7 +114,7 @@ class Controller_Blog extends Controller {
 				$entry = $blog->getEntry($cat['id'],$short_name);
 				if ($entry) {// post exestiert
 //					require_once('modules/markup/classes/textile.php');
-					$textile = new Textile_Markup();
+					$textile = new Textile();
 					$view = new View('blog/view');
 					$view->title = $entry['title'];
 					$view->id = $entry['id'];

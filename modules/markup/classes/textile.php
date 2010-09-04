@@ -203,7 +203,8 @@ Applying Attributes:
 @define('txt_registered',         '&#174;');
 @define('txt_copyright',          '&#169;');
 
-class Textile_Markup
+class Textile
+
 {
     var $hlgn;
     var $vlgn;
@@ -231,7 +232,7 @@ class Textile_Markup
     var $rev = '$Rev: 216 $';
 
 // -------------------------------------------------------------
-    function Markup_Textile()
+    function Textile()
     {
         $this->hlgn = "(?:\<(?!>)|(?<!<)\>|\<\>|\=|[()]+(?! ))";
         $this->vlgn = "[\-^~]";
