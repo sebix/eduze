@@ -48,7 +48,7 @@ class Helper_Sebix {
 	 *
 	 * @param   string  text to encode
 	 * @return  string  encoded text
-	 */
+	
 	static function bb ($text) {
 		return str_replace(array(
 					'[h1]',

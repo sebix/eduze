@@ -3,10 +3,10 @@
 <? foreach($entries->as_array() as $row): ?>
 <entry>
 	<? if (isset($row['title'])): /* no comment */ ?><title type="html"><?=$row['title']?></title>
-		<id>http://www.xebi.at/post/<?=$row['cat']?>/<?=$row['name']?></id>
+		<id>http://www.example.com/post/<?=$row['cat']?>/<?=$row['name']?></id>
 		<updated><?=$row['update']?></updated><? else: ?>
 		<title type="html"><?=i18n::get('comment')?> #<?=$row['id']?></title>
-		<id>http://www.xebi.at/post/<?=$row['cat']?>/<?=$row['name']?> <?=$row['id']?></id>
+		<id>http://www.example.com/post/<?=$row['cat']?>/<?=$row['name']?> <?=$row['id']?></id>
 	<? endif; ?>
     <published><?=$row['time']?></published>
     <link href="<?=Kohana::$base_url?>post/<?=$row['cat']?>/<?=$row['name']?>" />
@@ -20,7 +20,7 @@
 		</strong></p>
 	<? endif; ?>
 	<p>
-		<?=Helper_Sebix::bb($row['body'])?>
+		<?=$textile->TextileThis($row['body'])?>
 	</p>
 	<? if (isset($row['title'])): /* no comment */ ?>
 		<p>von <?=$row['author']?> am <?=$row['time']?> <?=i18n::get('in-cat')?> <?=Helper_Sebix::anchor('category/'.$row['cat'], $row['cat'], i18n::get('go-to-cat') . ' ' . $row['cat']);?><br />

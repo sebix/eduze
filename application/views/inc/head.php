@@ -11,6 +11,14 @@
 <meta name="author" content="author"/> 
 <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" media="screen"/>
 
+<? if (isset($feed)): // additional atom-feed (for example: comments-feed ?>
+	<link rel="alternate" type="application/atom+xml" title="Atom-Feed (passend)" href="<?=$feed?>" />
+<? endif; ?>
+	<link rel="alternate" type="application/atom+xml" title="Atom-Feed (Alle Beiträge)" href="/feed/" />
+<? if (isset($head)): ?>
+	<?=$head?>
+<? endif; ?>
+
 </head>
 
 <body>

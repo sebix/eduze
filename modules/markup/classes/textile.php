@@ -203,7 +203,7 @@ Applying Attributes:
 @define('txt_registered',         '&#174;');
 @define('txt_copyright',          '&#169;');
 
-class Markup_Textile
+class Textile_Markup
 {
     var $hlgn;
     var $vlgn;

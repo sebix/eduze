@@ -1,6 +1,6 @@
 <? include('application/views/inc/head.php'); ?>
 
-		<h2><?=$title?> <? if (isset($rss)): ?><a href="<?=$rss?>" title="Zum passenden RSS-Feed"><img src="/img/atom.png" style="height:20px; width:20px; border:0" alt="rss" /></a><? endif; ?></h2>
+		<h2><?=$title?> <? if (isset($feed)): ?><a href="<?=$feed?>" title="Zum passenden Atom-Feed"><img src="/img/atom.png" style="height:20px; width:20px; border:0" alt="feed" /></a><? endif; ?></h2>
 <? if (isset($top)): echo $top; endif; ?>
 <? foreach($entries as $row): ?>
 </div><div class="box">

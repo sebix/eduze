@@ -18,7 +18,7 @@
 <? endforeach; ?>
 </p>
 
-	<h3 id="comments"><?=i18n::get('comments')?> <? if (isset($rss)): ?><?=Helper_Sebix::anchor($rss, '<img src="/img/atom.png" style="height:20px; width:20px; border:0" alt="rss" />', i18n::get('go-to-fitting-feed'))?><? endif; ?></h3>
+	<h3 id="comments"><?=i18n::get('comments')?> <? if (isset($feed)): ?><?=Helper_Sebix::anchor($feed, '<img src="/img/atom.png" style="height:20px; width:20px; border:0" alt="feed" />', i18n::get('go-to-fitting-feed'))?><? endif; ?></h3>
 <? if ($comments): ?>
 	<? $color = true; ?>
 	<? foreach($comments->as_array() as $row): $color?$color=false:$color=true ?>

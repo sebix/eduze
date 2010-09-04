@@ -5,10 +5,10 @@
   <author>
     <name>Sebastian Wagner</name>
   </author>
-  <id>http://www.xebi.at/</id>
+  <id>http://www.example.com/</id>
   <updated>2010-01-21T17:00:00Z</updated>
-  <link href="http://www.xebi.at" />
-  <link href="http://www.xebi.at/feed/<?=$feed_link?>" rel="self" />
+  <link href="http://www.example.com" />
+  <link href="http://www.example.com/feed/<?=$feed_link?>" rel="self" />
   <subtitle>Das ist der Xebi Blog Hier gibt es Berichte, Tipps und vieles mehr zu Linux (Debian, Ubuntu) und Programmierung, wie PHP, C++ und Java.</subtitle>
-  <icon>http://www.xebi.at/favicon.ico</icon>
-  <rights>http://www.xebi.at/about/copyright</rights>
+  <icon>http://www.example.com/favicon.ico</icon>
+  <rights>http://www.example.com/about/copyright</rights>

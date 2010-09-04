@@ -26,7 +26,7 @@ class Controller_Blog extends Controller {
 			$view = View::factory('blog/overview');
 			$view->title = i18n::get('last-posts');
 			$view->bottom = $pagination;
-			$view->rss = '/feed';
+			$view->feed = '/feed';
 			$view->entries = $entries;
 			
 		} else {
@@ -62,7 +62,7 @@ class Controller_Blog extends Controller {
 						// view
 					$view = View::factory('blog/overview');
 					$view->title = i18n::get('category') . ': ' . $cat['name'];
-					$view->rss = '/feed/category/'.$cat['name'];
+					$view->feed = '/feed/category/'.$cat['name'];
 					$view->bottom = $pagination;
 					$view->top = $cat['desc'];
 					$view->entries = $entries;
@@ -113,8 +113,8 @@ class Controller_Blog extends Controller {
 			if ($cat) {	// kat exestiert
 				$entry = $blog->getEntry($cat['id'],$short_name);
 				if ($entry) {// post exestiert
-					require_once('modules/markup/classes/textile.php');
-					$textile = new Markup_Textile();
+//					require_once('modules/markup/classes/textile.php');
+					$textile = new Textile_Markup();
 					$view = new View('blog/view');
 					$view->title = $entry['title'];
 					$view->id = $entry['id'];
@@ -126,7 +126,7 @@ class Controller_Blog extends Controller {
 					$view->cat = $entry['cat'];
 					$view->captcha = new Captcha('riddle');;
 					$view->top = $top;
-					$view->rss = '/feed/comments/' . $entry['name'];
+					$view->feed = '/feed/comments/' . $entry['name'];
 					$view->form = $form;
 					$view->tags = explode(',',$entry['tags']);
 					$view->comments = $blog->getComments($entry['id']);	
@@ -266,7 +266,7 @@ function action_tag($tag = '',$seite = 1) {
 					// view
 				$view = View::factory('blog/overview');
 				$view->title = 'Tag: ' . $tag;
-				$view->rss = '/feed/tag/' . $tag;
+				$view->feed = '/fee/tag/' . $tag;
 				$view->bottom = $pagination;
 				$view->entries = $entries;
 
