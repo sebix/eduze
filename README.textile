@@ -2,21 +2,57 @@ h1. eduze
 
 eduze is a simple but feature-rich Blogging-System based on KohanaPHP3. But note: it's still under developemet!
 
+
 h2. Configuration
 
 h3. Database
 
-Edit /application/config/database.example.php and rename it to database.php
+# Edit @/application/config/database.example.php@ and rename it to database.php
+# Get the SQL-Dump from the "Download-Section":http://github.com/sebix/eduze/downloads and import it to your Database
+
+h3. Permissions
+
+bc. mkdir application/cache
+chmod 757 application/cache/
+mkdir application/logs
+chmod 757 application/logs/
+
+It is recommended tor run eduze on an own (sub)domain
+
+h3. Rewriting
+
+h4. Apache
+
+You can find an example configuration in the root-directory of eduze
+
+bc. mv example.htaccess .htaccess
+
+h4. Lighttpd
+
+Example Config with Conditionals
+
+bc. $HTTP["host"] =~ "(^|\.)eduze$" {
+        url.rewrite-once = ( 
+                "^/img/(.*)$" => "/img/$1",
+                "^/piwik/(.*)$" => "/piwik/$1",
+                "^/javascripts/(.*)$" => "/javascripts/$1",
+                "^/stylesheets/(.*)$" => "/stylesheets/$1",
+                "^/favicon.ico" => "/favicon.ico",
+                "^/(.*)$" => "/index.php/$1"
+        )   
+}
+
+This works also with Virtual-Hosts!
 
 h2. Integrated:
 
 h3. Base: Kohana PHP Framework, version 3.0 (dev)
 
-Based on development version of [Kohana](http://kohanaframework.org/).
+Based on development version of "KohanaPHP":http://kohanaframework.org/
 
 h3. Yahasana's Captcha-Module
 
-"Yahasana/Kohana-Captcha":http://github.com/Yahasana/Kohana-Captcha creates the Text-Captchas.
+"Yahasana/Kohana-Captcha":http://github.com/Yahasana/Kohana-Captcha creates the Text-Captchas
 
 h3. Textile Markup
 
